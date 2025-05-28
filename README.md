@@ -1,6 +1,6 @@
 # website-crud-mvc-poc
-
-A simple PHP MVC project demonstrating CRUD operations using Eloquent ORM.
+POC
+A simple PHP MVC project demonstrating CRUD operations using Eloquent ORM .
 
 ## Features
 
@@ -22,7 +22,7 @@ A simple PHP MVC project demonstrating CRUD operations using Eloquent ORM.
 
 1. Clone the repository:
    ```bash
-   git clone https://your-repo-url.git
+   git clone https://github.com/markcanal/website-crud-mvc-poc.git
    cd website-crud-mvc-poc
    ```
 
@@ -84,4 +84,4 @@ MIT License
 
 ---
 
-Created by Agos Tech
+Created by Agos Tech / Mark
