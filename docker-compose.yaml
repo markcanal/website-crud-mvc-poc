@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    volumes:
+      - ./assets:/app/assets # Sync source files to container
+      - ./public/css:/app/public/css # Sync built CSS back to host
+    command: npm run watch-css # For development, watch files and rebuild automatically
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    env_file:
+      - .env
+
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./public/css:/var/www/html/public/css # Share built CSS with PHP container
+    depends_on:
+      - node
+    environment:
+      - APP_ENV=local
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=biz
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: biz
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+volumes:
+  db_data:

@@ -1,0 +1,27 @@
+{
+    "name": "agostech/crud-mvc-poc",
+    "description": "A simple CRUD MVC proof of concept demonstrating PHP best practices with Composer-based autoloading.",
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "bramus/router": "^1.6",
+        "phpunit/phpunit": "^9.6",
+        "jenssegers/blade": "^1.4",
+        "illuminate/database": "^8.83"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Agostech\\CrudMvcPoc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AGOS",
+            "email": "agostechcollective@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

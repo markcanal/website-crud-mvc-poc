@@ -1,0 +1,24 @@
+{
+  "name": "website-crud-mvc-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --quiet-deps --load-path=node_modules assets/scss/app.scss public/css/app.css",
+    "watch-css": "sass --watch --load-path=node_modules assets/scss/app.scss:public/css/app.css",
+    "build-js": "esbuild assets/js/app.js --bundle --outfile=public/js/app.js",
+    "watch-js": "esbuild assets/app.js --bundle --outfile=public/js/app.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.6"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "sass": "^1.89.0"
+  }
+}
