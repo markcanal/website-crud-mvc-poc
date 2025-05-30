@@ -4,3 +4,5 @@
 /vendor
 .env.production
 .env.staging
+*.lock
+composer.lock
