@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Support\Facades\Facade;
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
@@ -21,5 +24,9 @@ $capsule->addConnection([
     'prefix'    => $config['prefix'],
 ]);
 
+$capsule->setEventDispatcher(new Dispatcher(new Container)); // 👈 Needed for Schema
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
+// 👇 Add this to enable Facades like Schema
+Facade::setFacadeApplication(Container::getInstance());
