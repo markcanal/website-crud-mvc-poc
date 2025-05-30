@@ -24,9 +24,10 @@
         @yield('content')
     </main>
 
-    <footer style="background:#f8f9fa; padding: 1rem; text-align:center; margin-top: 2rem;">
+    <footer class="bg-light py-3 text-center mt-4 text-muted">
         &copy; {{ date('Y') }} {{ $appName ?? 'My App' }}. All rights reserved.
     </footer>
+    @yield('script')
 </body>
 
 </html>

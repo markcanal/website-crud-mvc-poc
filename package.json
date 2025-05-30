@@ -7,7 +7,7 @@
     "build-css": "sass --quiet-deps --load-path=node_modules assets/scss/app.scss public/css/app.css",
     "watch-css": "sass --watch --load-path=node_modules assets/scss/app.scss:public/css/app.css",
     "build-js": "esbuild assets/js/app.js --bundle --outfile=public/js/app.js",
-    "watch-js": "esbuild assets/app.js --bundle --outfile=public/js/app.js --watch"
+    "watch-js": "esbuild assets/js/app.js --bundle --outfile=public/js/app.js --watch"
   },
   "keywords": [],
   "author": "",
